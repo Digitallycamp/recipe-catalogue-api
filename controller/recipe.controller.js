@@ -9,7 +9,7 @@ const mongoose = require('mongoose');
 async function createRecipe(req, res, next) {
 	console.log(req.body);
 	const { name, calories, ingredients } = req.body;
-	// const recipePhoto = req.files;
+
 	const localPhoto = req.files;
 	console.log(localPhoto);
 	if (!name || !calories || !ingredients) {
@@ -79,14 +79,6 @@ async function createRecipe(req, res, next) {
 }
 /****GET ALL RECIEPES */
 async function getRecipes(req, res, next) {
-	console.log('MY QUERY', req.query);
-	// const {
-	// 	recipe_name,
-	// 	calories,
-	// 	'ingredients.name': ingredientName,
-	// 	'ingredients.quantity': ingredientQuantity,
-	// } = req.query;
-	// console.log(ingredientName);
 	const {
 		recipe_name,
 		calories,
