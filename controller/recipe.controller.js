@@ -9,9 +9,9 @@ const mongoose = require('mongoose');
 async function createRecipe(req, res, next) {
 	console.log(req.body);
 	const { name, calories, ingredients } = req.body;
-
+	console.log(req.body);
 	const localPhoto = req.files;
-	console.log(localPhoto);
+
 	if (!name || !calories || !ingredients) {
 		throw new Error('Filed required');
 	}
@@ -58,11 +58,11 @@ async function createRecipe(req, res, next) {
 
 		// console.log(uploadPath);
 		// await localPhoto.recipePhoto.mv(uploadPath);
-
+		const parsedIngre = JSON.parse(ingredients);
 		const recipe = new RecipesModel({
 			recipe_name: name,
 			calories: parseInt(calories),
-			ingredients: ingredients,
+			ingredients: parsedIngre,
 			photo: result.secure_url,
 		});
 

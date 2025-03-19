@@ -20,7 +20,7 @@ const recipeRoute = express.Router();
  *       content:
  *         application/json:
  *           schema:
- *             $ref: '#/components/schemas/Recipes'
+ *
  *     responses:
  *       '200':
  *         description: A successful response
@@ -51,7 +51,7 @@ recipeRoute.get('/', getRecipes);
  * /api/v1/recipes/{id}:
  *   get:
  *     summary: Get a single  Recipe.
- *     description: Creating a Recipe.
+ *     description: Retriving a sinlge Recipe.
  *
  *
  *     responses:

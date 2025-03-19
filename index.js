@@ -33,6 +33,9 @@ const swaggerOptions = {
 			{
 				url: `http://localhost:${process.env.PORT}`,
 			},
+			{
+				url: `https://recipe-catalogue-api.onrender.com/`,
+			},
 		],
 		components: {
 			securitySchemes: {
@@ -57,8 +60,9 @@ app.use(fileUpload({ useTempFiles: true }));
 // app.get('/', (req, res) => {
 // 	res.send('Welcome to our Recipe API');
 // });
-app.use('/', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
+
 app.use('/api/v1/recipes', recipeRoute);
+app.use('/', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 morgan('tiny');
 app.listen(process.env.PORT, () => {
 	dbConfig(process.env.DATABASE_URL);
