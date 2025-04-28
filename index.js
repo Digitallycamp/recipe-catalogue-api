@@ -51,10 +51,12 @@ const swaggerOptions = {
 };
 
 const swaggerDocs = swaggerJSDoc(swaggerOptions);
-
+const corsOption = {
+	orgin: ['http://localhost:3001', 'http://localhost:3000'],
+};
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
-app.use(cors());
+app.use(cors(corsOption));
 app.use(fileUpload({ useTempFiles: true }));
 
 // app.get('/', (req, res) => {
