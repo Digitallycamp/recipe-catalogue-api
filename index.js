@@ -52,7 +52,7 @@ const swaggerOptions = {
 
 const swaggerDocs = swaggerJSDoc(swaggerOptions);
 const corsOption = {
-	orgin: ['http://localhost:3001', 'http://localhost:3000'],
+	origin: ['http://localhost:3001', 'http://localhost:3000'],
 };
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
