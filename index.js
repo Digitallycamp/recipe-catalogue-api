@@ -52,7 +52,10 @@ const swaggerOptions = {
 
 const swaggerDocs = swaggerJSDoc(swaggerOptions);
 const corsOption = {
-	origin: ['http://localhost:3001', 'http://localhost:3000'],
+	origin: [
+		'http://localhost:3000',
+		'https://recipe-catalogue-api.onrender.com',
+	],
 };
 app.use(cors(corsOption));
 app.use(express.urlencoded({ extended: false }));
