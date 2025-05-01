@@ -56,6 +56,7 @@ const corsOption = {
 		'http://localhost:3000',
 		'https://recipe-catalogue-api.onrender.com',
 	],
+	methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
 };
 app.use(cors(corsOption));
 app.use(express.urlencoded({ extended: false }));
