@@ -29,7 +29,7 @@ const recipeRoute = express.Router();
  *       '500':
  *         description: Internal server error
  */
-recipeRoute.post('/', createRecipe);
+recipeRoute.post('/create', createRecipe);
 /**
  * @swagger
  * /api/v1/recipes:
@@ -45,7 +45,7 @@ recipeRoute.post('/', createRecipe);
  *       '500':
  *         description: Internal server error
  */
-recipeRoute.get('/', getRecipes);
+recipeRoute.get('/all', getRecipes);
 /**
  * @swagger
  * /api/v1/recipes/{id}:
@@ -62,8 +62,8 @@ recipeRoute.get('/', getRecipes);
  *       '500':
  *         description: Internal server error
  */
-recipeRoute.get('/:id', getRecipe);
-recipeRoute.put('/:id', editRecipe);
-recipeRoute.delete('/:id', deleteRecipe);
+recipeRoute.get('/recipe/:id', getRecipe);
+recipeRoute.put('/recipe/:id', editRecipe);
+recipeRoute.delete('/recipe/:id', deleteRecipe);
 
 module.exports = recipeRoute;
