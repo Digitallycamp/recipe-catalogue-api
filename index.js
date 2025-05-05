@@ -58,6 +58,7 @@ const corsOption = {
 		'https://recipe-catalogue-api.onrender.com',
 	],
 	methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
+	credentials: true,
 };
 app.use(cors(corsOption));
 app.use(express.urlencoded({ extended: false }));
